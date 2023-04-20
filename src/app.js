@@ -22,7 +22,7 @@ app.use(express.json());
 
 // app.use("/api/languages",languageRoutes);
 
-app.use("/npmapi/listarCiclos",ciclosRoutes);
+app.use("/api/listarCiclos",ciclosRoutes);
 app.use("/api/listarSedes",listarSedesRoutes); 
 app.use("/api/listarCarreras",listarCarrerasRoutes);
 
