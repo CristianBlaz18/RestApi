@@ -1,9 +1,9 @@
 import {getConnection} from "./../database/database";
 
-const getPedido = async(req,res) =>{
+const getCiclo = async(req,res) =>{
     try{
         const connection = await getConnection();
-        const result = await connection.query("SELECT * FROM tblpedido");
+        const result = await connection.query("SELECT * FROM tbl_ciclo");
         res.json(result);
     }catch(error){
         res.status(500);
@@ -14,5 +14,5 @@ const getPedido = async(req,res) =>{
 
 
 export const methods = {
-    getPedido
+    getCiclo
 };

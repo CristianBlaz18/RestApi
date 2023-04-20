@@ -4,7 +4,10 @@ import morgan from "morgan";
 //routes
 
 // import languageRoutes from "./routes/language.routes";
-import pedidoRoutes from "./routes/pedido.routes";
+
+import ciclosRoutes from "./routes/ciclos.routes";
+import listarSedesRoutes from "./routes/listarSedes.routes";
+import listarCarrerasRoutes from "./routes/listarCarreras.routes";
 
 const app = express();
 
@@ -18,6 +21,9 @@ app.use(express.json());
 //routes
 
 // app.use("/api/languages",languageRoutes);
-app.use("/api/pedido",pedidoRoutes);
+
+app.use("/api/listarCiclos",ciclosRoutes);
+app.use("/api/listarSedes",listarSedesRoutes); 
+app.use("/api/listarCarreras",listarCarrerasRoutes);
 
 export default app;
