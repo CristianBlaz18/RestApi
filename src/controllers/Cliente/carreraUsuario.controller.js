@@ -1,10 +1,10 @@
-import {getConnection} from "./../database/database";
+import {getConnection} from "../../database/database";
 
-const getCarrera = async(req,res) =>{
+const getCarreraUsuario = async(req,res) =>{
     try{
         const {id}= req.params;
         const connection = await getConnection();
-        const result = await connection.query("SELECT nombre,imagen_carrera FROM tbl_carrera WHERE id_sede =?",id);
+        const result = await connection.query("SELECT carrera FROM tbl_usuario WHERE id_usuario =?",id);
         res.json(result);
     }catch(error){
         res.status(500);
@@ -15,5 +15,5 @@ const getCarrera = async(req,res) =>{
 
 
 export const methods = {
-    getCarrera
+    getCarreraUsuario
 };

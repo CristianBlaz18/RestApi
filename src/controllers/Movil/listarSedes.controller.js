@@ -1,9 +1,9 @@
-import {getConnection} from "./../database/database";
+import {getConnection} from "../../database/database";
 
-const getCiclo = async(req,res) =>{
+const getSedes = async(req,res) =>{
     try{
         const connection = await getConnection();
-        const result = await connection.query("SELECT * FROM tbl_ciclo");
+        const result = await connection.query("SELECT imagen_sede, nombre FROM tbl_sedes");
         res.json(result);
     }catch(error){
         res.status(500);
@@ -14,5 +14,5 @@ const getCiclo = async(req,res) =>{
 
 
 export const methods = {
-    getCiclo
+    getSedes
 };
