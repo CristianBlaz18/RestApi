@@ -4,17 +4,17 @@ const getCarrera = async(req,res) =>{
     try{
         
         const connection = await getConnection();
-        const result = await connection.query("CALL listar_carreras()");
+        const [result] = await connection.query("CALL listar_carreras()");
         if(result.length > 0){
             const image = result[0];
-            const buffer=Buffer.from(image.blob_ciclo, 'binary');
+            const buffer=Buffer.from(image.blob_carrera, 'binary');
             const base64 = buffer.toString('base64');
             const images = [];
-            for(let i=0; i<result[0].length; i++){
-                const response ={Ciclos : 
-                    {ID : image.id_ciclo,
-                    Ruta : image.nruta_ciclo,
-                    CicloTag : image.ciclo_tag,                
+            for(let i=0; i<result.length; i++){
+                const response ={Carrera : 
+                    {Id : image.id_carrera,
+                    Nombre : image.nombre_carrera,
+                    Ruta : image.imagen_carrera,                
                     Imagen : base64,
                     }};
                     images.push(response);
