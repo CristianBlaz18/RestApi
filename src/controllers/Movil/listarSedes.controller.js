@@ -4,7 +4,7 @@ const getSedes = async(req,res) =>{
     try{
         const connection = await getConnection();
         const result = await connection.query("CALL listar_sedes()");
-        res.json(result);
+        res.json({sedes : result});
     }catch(error){
         res.status(500);
         res.send(error.message);
