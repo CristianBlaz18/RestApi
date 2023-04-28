@@ -1,6 +1,8 @@
 import express from "express";
 import morgan from "morgan";
 
+
+
 import ciclosRoutes from "./routes/Movil/ciclos.routes";
 import listarSedesRoutes from "./routes/Movil/listarSedes.routes";
 import listarCarrerasRoutes from "./routes/Movil/listarCarreras.routes";
