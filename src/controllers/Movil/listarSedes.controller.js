@@ -3,8 +3,9 @@ const getSedes = async(req,res) =>{
     try{
         const connection = await getConnection();
         const [result] = await connection.query("CALL listar_sedes()");
-        const images = {};
+        
         for(let i = 0; i < result.length; i++){
+            const images = {};
             const image = result[i];
             const buffer=Buffer.from(image.blob_sede, 'binary');
             const base64 = buffer.toString('base64');
@@ -14,7 +15,7 @@ const getSedes = async(req,res) =>{
             //     Ruta : image.imagen_sede,                
             //     Imagen : base64,
             //     };
-                images.Nombre = image.NombreSede;
+                images.Nombre = image.nombre_sede;
                 images.Id = image.id_sede;
                 images.Ruta = image.imagen_sede;
                 images.Imagen = base64;
