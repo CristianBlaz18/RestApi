@@ -4,7 +4,7 @@ const getCiclo = async(req,res) =>{
     try{
         const connection = await getConnection();
         const [result] = await connection.query("CALL listar_ciclos()");
-        const images = {};
+        const images = [];
         for(let i=0; i<result.length; i++){
             const image = result[i];
             const buffer=Buffer.from(image.blob_ciclo, 'binary');
@@ -15,7 +15,7 @@ const getCiclo = async(req,res) =>{
                 Tag : image.ciclo_tag,                
                 Imagen : base64,
                 };
-                images[i]=response;
+                images.push(response);
         }
         res.json(images);
     }catch(error){

@@ -3,7 +3,7 @@ const getSedes = async(req,res) =>{
     try{
         const connection = await getConnection();
         const [result] = await connection.query("CALL listar_sedes()");
-        const images = {};
+        const images = [];
         for(let i = 0; i < result.length; i++){
             
             const image = result[i];
@@ -15,7 +15,7 @@ const getSedes = async(req,res) =>{
                 Ruta : image.imagen_sede,                
                 Imagen : base64,
                 };
-            images[i] = response;
+            images.push(response);
                 
         }
         res.json(images); 
