@@ -15,7 +15,7 @@ const getCiclo = async(req,res) =>{
                 Tag : image.ciclo_tag,                
                 Imagen : base64,
                 };
-                images.push(response);
+                images[i]=response;
         }
         res.json(images);
     }catch(error){

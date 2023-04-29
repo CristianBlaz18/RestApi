@@ -5,7 +5,7 @@ const getCarrera = async(req,res) =>{
         
         const connection = await getConnection();
         const [result] = await connection.query("CALL listar_carreras()");
-        const images = [];
+        const images = {};
         for(let i=0; i<result.length; i++){
             const image = result[i];
             const buffer=Buffer.from(image.blob_carrera, 'binary');
@@ -16,7 +16,7 @@ const getCarrera = async(req,res) =>{
                 Ruta : image.imagen_carrera,                
                 Imagen : base64,
                 };
-                images.push(response);
+                images[i]=response;
         }
         res.json(images);
     }catch(error){
