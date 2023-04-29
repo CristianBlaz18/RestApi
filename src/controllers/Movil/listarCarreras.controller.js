@@ -10,12 +10,12 @@ const getCarrera = async(req,res) =>{
             const image = result[i];
             const buffer=Buffer.from(image.blob_carrera, 'binary');
             const base64 = buffer.toString('base64');
-            const response ={Carrera : 
+            const response = 
                 {Id : image.id_carrera,
                 Nombre : image.nombre_carrera,
                 Ruta : image.imagen_carrera,                
                 Imagen : base64,
-                }};
+                };
                 images.push(response);
         }
         res.json(images);

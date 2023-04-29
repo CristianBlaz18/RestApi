@@ -8,12 +8,12 @@ const getSedes = async(req,res) =>{
             const image = result[i];
             const buffer=Buffer.from(image.blob_sede, 'binary');
             const base64 = buffer.toString('base64');
-            const response ={Sede : 
+            const response =
                 {ID : image.id_sede,
                 NombreSede : image.nombre_sede,
                 Ruta : image.imagen_sede,                
                 Imagen : base64,
-                }};
+                };
                 images.push(response);
         }
         
