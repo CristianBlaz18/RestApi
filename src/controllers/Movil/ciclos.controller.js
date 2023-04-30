@@ -18,6 +18,7 @@ const getCiclo = async(req,res) =>{
                 images.push(response);
         }
         res.json(images);
+        
     }catch(error){
         res.status(500);
         res.send(error.message);
