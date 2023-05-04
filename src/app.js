@@ -1,5 +1,6 @@
 import express from "express";
 import morgan from "morgan";
+import cors from "cors";
 
 
 
@@ -18,6 +19,7 @@ app.set("port", process.env.PORT);
 //middlewares
 app.use(morgan("dev"));
 app.use(express.json());
+app.use(cors());
 
 //route
 //APP MOVIL
