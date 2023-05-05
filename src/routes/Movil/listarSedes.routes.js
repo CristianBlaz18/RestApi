@@ -3,5 +3,4 @@ import { methods as listarSedesController } from "../../controllers/Movil/listar
 const router = Router();
 
 router.get("/", listarSedesController.getSedes);
-
 export default router;
