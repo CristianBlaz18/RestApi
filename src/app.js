@@ -1,11 +1,11 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-import swaggerUI from "swagger-ui-express"
-import swaggerJsDoc from "swagger-jsdoc"
+// import swaggerUI from "swagger-ui-express"
+// import swaggerJsDoc from "swagger-jsdoc"
 const path = require("path")
-// const swaggerUI= require("swagger-ui-express");
-// const swaggerJsDoc = require("swagger-jsdoc");
+const swaggerUI= require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 const swaggerSpec = {
     definition: {
         openapi: "3.0.0",
@@ -15,19 +15,20 @@ const swaggerSpec = {
         },
         servers: [
             {
-                url: "http://localhost:8080"
+                url: "http://localhost:7000"
             }    
         ]
     },
-    apis:[`${path.join(__dirname, "./routes/Movil/*.js")}`]
+    apis:[`${path.join(__dirname, "./routes/*.js")}`]
 }
 
 
 
 //APP MOVIL
-import listarSedesRoutes from "./routes/Movil/listarSedes.routes";
-import ciclosRoutes from "./routes/Movil/ciclos.routes";    
-import listarCarrerasRoutes from "./routes/Movil/listarCarreras.routes";
+
+import listarSedesRoutes from "./routes/listarSedes.routes";
+import ciclosRoutes from "./routes/ciclos.routes";    
+import listarCarrerasRoutes from "./routes/listarCarreras.routes";
 
 //WEB CLIENTE
 import listarCarrerasSedesRoutes from "./routes/WebCliente/listarCarrerasSedes.routes";
@@ -37,7 +38,7 @@ import planEstudioRoutes from "./routes/WebCliente/planEstudio.routes";
 import experienciaCarreraCiclosRoutes from "./routes/WebCliente/experienciaCarreraCiclo.routes";
 
 //WEB ADMIN
-import crearUsuarioRoutes from "./routes/WebAdmin/crearUsuario.routes";
+import crearUsuarioRoutes from "./routes/crearUsuario.routes";
 import validarUsuariosRoutes from "./routes/WebAdmin/validarUsuario.routes";
 import listarCategoriaRoutes from "./routes/WebAdmin/listarCategoria.routes";
 
@@ -57,6 +58,8 @@ app.use("/api-doc",
 //route
 //APP MOVIL
 app.use("/api/listarCiclos",ciclosRoutes);
+
+
 app.use("/api/listarSedes",listarSedesRoutes); 
 
 
