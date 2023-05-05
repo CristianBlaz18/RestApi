@@ -1,23 +1,45 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-
+import swaggerUI from "swagger-ui-express"
+import swaggerJsDoc from "swagger-jsdoc"
+// const swaggerUI= require("swagger-ui-express");
+// const swaggerJsDoc = require("swagger-jsdoc");
+const path = require("path");
 
 //APP MOVIL
+import listarSedesRoutes from "./routes/Movil/listarSedes.routes";
+import ciclosRoutes from "./routes/Movil/ciclos.routes";    
+import listarCarrerasRoutes from "./routes/Movil/listarCarreras.routes";
+
 //WEB CLIENTE
 import listarCarrerasSedesRoutes from "./routes/WebCliente/listarCarrerasSedes.routes";
 import barraCarreraRoutes from "./routes/WebCliente/barraCarrera.routes";
-//WEB ADMIN
-import ciclosRoutes from "./routes/Movil/ciclos.routes";
-import listarSedesRoutes from "./routes/Movil/listarSedes.routes";
-import listarCarrerasRoutes from "./routes/Movil/listarCarreras.routes";
-import planEstudioRoutes from "./routes/WebCliente/planEstudio.routes";
-import crearUsuarioRoutes from "./routes/WebAdmin/crearUsuario.routes";
 import carreraUsuarioRoutes from "./routes/WebCliente/carreraUsuario.routes";
+import planEstudioRoutes from "./routes/WebCliente/planEstudio.routes";
+
+//WEB ADMIN
+import crearUsuarioRoutes from "./routes/WebAdmin/crearUsuario.routes";
 import validarUsuariosRoutes from "./routes/WebAdmin/validarUsuario.routes";
+import listarCategoriaRoutes from "./routes/WebAdmin/listarCategoria.routes";
 
 const app = express();
 
+const swaggerSpec = {
+    definition :{
+        openapi : "3.0.0",
+        info: {
+            title :"Node MySql API",
+            version:"1.0.0"
+        },
+        servers:[
+            {
+                url:"http://localhost:8000"
+            }
+        ]
+    },
+    apis :[`${path.join(__dirname,"./routes/Movil/listarCarreras.routes.js")}`]
+}
 //setings
 app.set("port", process.env.PORT);
 
@@ -25,11 +47,14 @@ app.set("port", process.env.PORT);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
+app.use("/api-doc", swaggerUI.serve, swaggerUI.setup(swaggerJsDoc(swaggerSpec)));
 
 //route
 //APP MOVIL
 app.use("/api/listarCiclos",ciclosRoutes);
 app.use("/api/listarSedes",listarSedesRoutes); 
+
+
 app.use("/api/listarCarreras",listarCarrerasRoutes);
 
 //WEB CLIENTE
@@ -43,5 +68,9 @@ app.use("/api/planEstduio",planEstudioRoutes);
 //WEB ADMIN
 app.use("/api/validarUsuario",validarUsuariosRoutes);
 app.use("/api/crearUsuario",crearUsuarioRoutes);
+app.use("/api/listarCategoria",listarCategoriaRoutes);
+
+
+
 
 export default app;
