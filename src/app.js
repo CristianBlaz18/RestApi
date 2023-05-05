@@ -11,6 +11,7 @@ import planEstudioRoutes from "./routes/WebCliente/planEstudio.routes";
 import crearUsuarioRoutes from "./routes/WebAdmin/crearUsuario.routes";
 import carreraUsuarioRoutes from "./routes/WebCliente/carreraUsuario.routes";
 import validarUsuariosRoutes from "./routes/WebAdmin/validarUsuario.routes";
+import listarCarrerasSedesRoutes from "./routes/WebCliente/listarCarrerasSedes.routes";
 const app = express();
 
 //setings
@@ -29,6 +30,7 @@ app.use("/api/listarCarreras",listarCarrerasRoutes);
 
 //WEB CLIENTE
 app.use("/api/carreraUsuario",carreraUsuarioRoutes);
+app.use("/api/listarCarreraSede",listarCarrerasSedesRoutes);
 
 //EXPERIENCIA FALTA DEFINIR 
 app.use("/api/planEstduio",planEstudioRoutes);
