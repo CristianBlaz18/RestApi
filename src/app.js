@@ -15,7 +15,7 @@ const swaggerSpec = {
         },
         servers: [
             {
-                url: "http://localhost:7000"
+                url: "http://144.22.45.179:9000"
             }    
         ]
     },

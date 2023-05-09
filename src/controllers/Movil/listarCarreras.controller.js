@@ -13,7 +13,8 @@ const getCarrera = async(req,res) =>{
             const response = 
                 {Id : image.id_carrera,
                 Nombre : image.nombre_carrera,
-                Ruta : image.imagen_carrera,                
+                Ruta : image.imagen_carrera,  
+                PlanEstudios: image.plan_estudios_carrera,          
                 Imagen : base64,
                 };
                 images.push(response);
