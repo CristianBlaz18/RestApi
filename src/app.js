@@ -1,26 +1,7 @@
 import express from "express";
 import morgan from "morgan";
 import cors from "cors";
-// import swaggerUI from "swagger-ui-express"
-// import swaggerJsDoc from "swagger-jsdoc"
-const path = require("path")
-const swaggerUI= require("swagger-ui-express");
-const swaggerJsDoc = require("swagger-jsdoc");
-const swaggerSpec = {
-    definition: {
-        openapi: "3.0.0",
-        info: {
-            title: "APIs Equipo Verde",
-            version: "1.0.0"
-        },
-        servers: [
-            {
-                url: "http://144.22.45.179:9000"
-            }    
-        ]
-    },
-    apis:[`${path.join(__dirname, "./routes/*.js")}`]
-}
+
 
 
 
@@ -31,16 +12,17 @@ import ciclosRoutes from "./routes/ciclos.routes";
 import listarCarrerasRoutes from "./routes/listarCarreras.routes";
 
 //WEB CLIENTE
-import listarCarrerasSedesRoutes from "./routes/WebCliente/listarCarrerasSedes.routes";
-import barraCarreraRoutes from "./routes/WebCliente/barraCarrera.routes";
-import carreraUsuarioRoutes from "./routes/WebCliente/carreraUsuario.routes";
-import planEstudioRoutes from "./routes/WebCliente/planEstudio.routes";
-import experienciaCarreraCiclosRoutes from "./routes/WebCliente/experienciaCarreraCiclo.routes";
+import listarCarrerasSedesRoutes from "./routes/listarCarrerasSedes.routes";
+import barraCarreraRoutes from "./routes/barraCarrera.routes";
+import carreraUsuarioRoutes from "./routes/carreraUsuario.routes";
+import planEstudioRoutes from "./routes/planEstudio.routes";
+import experienciaCarreraCiclosRoutes from "./routes/experienciaCarreraCiclo.routes";
+import numCiclosCarrreraRoutes from "./routes/numCiclosCarrera.routes";
 
 //WEB ADMIN
 import crearUsuarioRoutes from "./routes/crearUsuario.routes";
-import validarUsuariosRoutes from "./routes/WebAdmin/validarUsuario.routes";
-import listarCategoriaRoutes from "./routes/WebAdmin/listarCategoria.routes";
+import validarUsuariosRoutes from "./routes/validarUsuario.routes";
+import listarCategoriaRoutes from "./routes/listarCategoria.routes";
 
 const app = express();
 
@@ -51,18 +33,12 @@ app.set("port", process.env.PORT);
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cors());
-app.use("/api-doc",
-    swaggerUI.serve,
-    swaggerUI.setup(swaggerJsDoc(swaggerSpec)))
+
 
 //route
 //APP MOVIL
 app.use("/api/listarCiclos",ciclosRoutes);
-
-
 app.use("/api/listarSedes",listarSedesRoutes); 
-
-
 app.use("/api/listarCarreras",listarCarrerasRoutes);
 
 //WEB CLIENTE
@@ -70,7 +46,7 @@ app.use("/api/carreraUsuario",carreraUsuarioRoutes);
 app.use("/api/listarCarreraSede",listarCarrerasSedesRoutes);
 app.use("/api/barraCarrera",barraCarreraRoutes);
 app.use("/api/listarExperiencias",experienciaCarreraCiclosRoutes);
-
+app.use("/api/listarNumCiclosCarrera",numCiclosCarrreraRoutes);
 //EXPERIENCIA FALTA DEFINIR 
 app.use("/api/planEstduio",planEstudioRoutes);
 
