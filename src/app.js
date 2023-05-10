@@ -26,6 +26,7 @@ import llamarExperienciaCarreraRoutes from "./routes/llamarExperienciaCarrera.ro
 import crearUsuarioRoutes from "./routes/crearUsuario.routes";
 import validarUsuariosRoutes from "./routes/validarUsuario.routes";
 import listarCategoriaRoutes from "./routes/listarCategoria.routes";
+import agregarContenidoRoutes from "./routes/agregarContenido.routes";
 
 const app = express();
 
@@ -60,6 +61,7 @@ app.use("/api/planEstduio",planEstudioRoutes);
 app.use("/api/validarUsuario",validarUsuariosRoutes);
 app.use("/api/crearUsuario",crearUsuarioRoutes);
 app.use("/api/listarCategoria",listarCategoriaRoutes);
+app.use("/api/agregarContenido",agregarContenidoRoutes);
 
 
 
