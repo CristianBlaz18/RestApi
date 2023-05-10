@@ -10,6 +10,7 @@ import cors from "cors";
 import listarSedesRoutes from "./routes/listarSedes.routes";
 import ciclosRoutes from "./routes/ciclos.routes";    
 import listarCarrerasRoutes from "./routes/listarCarreras.routes";
+import listarContenidoExperienciaRoutes from "./routes/listarContenidoExperiencia.routes";
 
 //WEB CLIENTE
 import listarCarrerasSedesRoutes from "./routes/listarCarrerasSedes.routes";
@@ -44,6 +45,7 @@ app.use(cors());
 app.use("/api/listarCiclos",ciclosRoutes);
 app.use("/api/listarSedes",listarSedesRoutes); 
 app.use("/api/listarCarreras",listarCarrerasRoutes);
+app.use("/api/listarContenidoExperiencias",listarContenidoExperienciaRoutes);
 
 //WEB CLIENTE
 app.use("/api/carreraUsuario",carreraUsuarioRoutes);

@@ -18,12 +18,8 @@ const postContenido = async(req,res) =>{
           );
         // const result = await connection.query("call agregar_contenido(?,?,?)"
         // ,[tipo_contenido, ruta_contenido, tag]);
-        // if (error) {
-        //     console.error(error);
-        //     res.status(500).send('Error al agregar contenido');
-        //   } else {
+        // if (result) {
         //     res.status(200).send('Contenido agregado con éxito');
-            
         //   }
         
     }catch(error){
