@@ -11,6 +11,7 @@ import listarSedesRoutes from "./routes/listarSedes.routes";
 import ciclosRoutes from "./routes/ciclos.routes";    
 import listarCarrerasRoutes from "./routes/listarCarreras.routes";
 import listarContenidoExperienciaRoutes from "./routes/listarContenidoExperiencia.routes";
+import llamarBotonExperienciaRoutes from "./routes/llamarBotonExp.routes";
 
 //WEB CLIENTE
 import listarCarrerasSedesRoutes from "./routes/listarCarrerasSedes.routes";
@@ -48,6 +49,7 @@ app.use("/api/listarCiclos",ciclosRoutes);
 app.use("/api/listarSedes",listarSedesRoutes); 
 app.use("/api/listarCarreras",listarCarrerasRoutes);
 app.use("/api/listarContenidoExperiencias",listarContenidoExperienciaRoutes);
+app.use("/api/llamarBotonExp",llamarBotonExperienciaRoutes); 
 
 //WEB CLIENTE
 app.use("/api/carreraUsuario",carreraUsuarioRoutes);

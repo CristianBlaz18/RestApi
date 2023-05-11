@@ -2,11 +2,11 @@ import {getConnection} from "../../database/database";
 
 const postContenido = async(req,res) =>{
     try{
-        const {tipo_contenido, ruta_contenido, tag}= req.query;
+        const {tipo_contenido,ruta_contenido,tag}= req.query;
         const connection = await getConnection();
         connection.query(
             'CALL agregar_contenido(?, ?, ?)',
-            [tipo_contenido, ruta_contenido, tag],
+            [tipo_contenido,ruta_contenido, tag],
             (error, results, fields) => {
               if (error) {
                 console.error(error);
