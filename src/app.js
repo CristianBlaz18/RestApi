@@ -22,6 +22,8 @@ import numCiclosCarrreraRoutes from "./routes/numCiclosCarrera.routes";
 import botonExperienciaCarreraSedeRoutes from "./routes/botonExperienciaCarrera.routes";
 import llamarExperienciaCarreraRoutes from "./routes/llamarExperienciaCarrera.routes";
 
+import llamarCarreraWebController from "./routes/llamarCarreraWeb.routes";
+
 
 //WEB ADMIN
 import crearUsuarioRoutes from "./routes/crearUsuario.routes";
@@ -53,8 +55,9 @@ app.use("/api/listarCarreraSede",listarCarrerasSedesRoutes);
 app.use("/api/barraCarrera",barraCarreraRoutes);
 app.use("/api/listarExperiencias",experienciaCarreraCiclosRoutes);
 app.use("/api/listarNumCiclosCarrera",numCiclosCarrreraRoutes);
-app.use("/api/botonExperienciaCarrera",botonExperienciaCarreraSedeRoutes); 
-app.use("/api/llamarExperienciaCarrera",llamarExperienciaCarreraRoutes);  
+app.use("/api/botonExperienciaCarrera",botonExperienciaCarreraSedeRoutes);
+app.use("/api/llamarExperienciaCarrera",llamarExperienciaCarreraRoutes);
+app.use("/api/llamarCarreraWeb",llamarCarreraWebController); 
 
 //EXPERIENCIA FALTA DEFINIR 
 app.use("/api/planEstduio",planEstudioRoutes);
