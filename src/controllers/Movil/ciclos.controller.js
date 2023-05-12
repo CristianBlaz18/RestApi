@@ -25,7 +25,7 @@ const getCiclo = async(req,res) =>{
     
 };
 
-
+//HOLA DE MI PARA TI 
 export const methods = {
     getCiclo
 };
