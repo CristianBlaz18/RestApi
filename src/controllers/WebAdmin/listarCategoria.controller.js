@@ -2,9 +2,8 @@ import {getConnection} from "../../database/database";
 
 const getCategoria = async(req,res) =>{
     try{
-        const {id_carrera}= req.query;
         const connection = await getConnection();
-        const [result] = await connection.query("call typesMultimedia_byCarrera(?)",[id_carrera]);
+        const [result] = await connection.query("call listar_categoria()");
         res.send(result);
     }catch(error){
         res.status(500);
