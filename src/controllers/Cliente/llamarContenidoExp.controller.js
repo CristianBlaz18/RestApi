@@ -12,7 +12,7 @@ const getContenidoExpWeb = async(req,res) =>{
     }
     
 };
- //PRUEBA
+
 
 export const methods = {
     getContenidoExpWeb
