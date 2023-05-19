@@ -18,6 +18,7 @@ const getBotonExp= async(req,res) =>{
                 icono_categoria_blob : base642,  
                 ciclo_fin: image.ciclo_fin,           
                 blob_ciclo : base64,
+                nombre_categoria : image.nombre_categoria
                 };
                 images.push(response);
         }
