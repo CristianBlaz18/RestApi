@@ -13,6 +13,7 @@ import listarCarrerasRoutes from "./routes/listarCarreras.routes";
 import listarContenidoExperienciaRoutes from "./routes/listarContenidoExperiencia.routes";
 import llamarBotonExperienciaRoutes from "./routes/llamarBotonExp.routes";
 import contenidoExperienciaMovilRoutes from "./routes/contenidoExperienciaMovil.routes";
+import insertarSolicitudInformacionRoutes from "./routes/InsertarSolicitudInformacion.routes";
 
 //WEB CLIENTE
 import listarCarrerasSedesRoutes from "./routes/listarCarrerasSedes.routes";
@@ -55,6 +56,7 @@ app.use("/api/listarCarreras",listarCarrerasRoutes);
 app.use("/api/listarContenidoExperiencias",listarContenidoExperienciaRoutes);
 app.use("/api/llamarBotonExp",llamarBotonExperienciaRoutes); 
 app.use("/api/contenidoExperienciaMovil",contenidoExperienciaMovilRoutes);
+app.use("/api/insertarSolicitudInformacion",insertarSolicitudInformacionRoutes); 
 
 //WEB CLIENTE
 app.use("/api/carreraUsuario",carreraUsuarioRoutes);
