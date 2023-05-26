@@ -36,6 +36,8 @@ import listarCategoriaRoutes from "./routes/listarCategoria.routes";
 import agregarContenidoRoutes from "./routes/agregarContenido.routes";
 import listarCiclosCarrerasRoutes from "./routes/listarCiclosCarrera.routes";
 import agregarExperienciaRoutes from "./routes/agregarExperiencia.routes";
+import editarExperienciaRoutes from "./routes/editarExperiencia.routes";
+import listarExperienciaAdminRoutes from "./routes/listarExperienciasAdmin.routes";
 
 const app = express();
 
@@ -79,8 +81,8 @@ app.use("/api/listarCategoria",listarCategoriaRoutes);
 app.use("/api/agregarContenido",agregarContenidoRoutes);
 app.use("/api/listarCiclosCarreras",listarCiclosCarrerasRoutes);
 app.use("/api/agregarExperiencia",agregarExperienciaRoutes); 
-
-
+app.use("/api/editarExperiencia",editarExperienciaRoutes); 
+app.use("/api/listarExperienciaAdmin",listarExperienciaAdminRoutes); 
 
 
 export default app;
