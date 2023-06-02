@@ -15,7 +15,8 @@ const getBotonExp= async(req,res) =>{
             const response = 
                 {id_experiencia : image.id_experiencia,
                 fila_experiencia : image.fila_experiencia,
-                icono_categoria_blob : base642,  
+                icono_categoria_blob : base642, 
+                ciclo_inicio: image.ciclo_inicio, 
                 ciclo_fin: image.ciclo_fin,           
                 blob_ciclo : base64,
                 nombre_categoria : image.nombre_categoria

@@ -7,37 +7,36 @@ import cors from "cors";
 
 //APP MOVIL
 
-import listarSedesRoutes from "./routes/listarSedes.routes";
-import ciclosRoutes from "./routes/ciclos.routes";    
-import listarCarrerasRoutes from "./routes/listarCarreras.routes";
-import listarContenidoExperienciaRoutes from "./routes/listarContenidoExperiencia.routes";
-import llamarBotonExperienciaRoutes from "./routes/llamarBotonExp.routes";
-import contenidoExperienciaMovilRoutes from "./routes/contenidoExperienciaMovil.routes";
-import insertarSolicitudInformacionRoutes from "./routes/InsertarSolicitudInformacion.routes";
+import listarSedesRoutes from "./routes/Movil/listarSedes.routes";
+import ciclosRoutes from "./routes/Movil/ciclos.routes";    
+import listarCarrerasRoutes from "./routes/Movil/listarCarreras.routes";
+import listarContenidoExperienciaRoutes from "./routes/Movil/listarContenidoExperiencia.routes";
+import llamarBotonExperienciaRoutes from "./routes/Movil/llamarBotonExp.routes";
+import contenidoExperienciaMovilRoutes from "./routes/Movil/contenidoExperienciaMovil.routes";
+import insertarSolicitudInformacionRoutes from "./routes/Movil/InsertarSolicitudInformacion.routes";
+import listarCarreraSedeMovilRoutes from "./routes/Movil/listarCarreraSedeMovil.routes";
+import cicloACicloCarreraMovilRoutes from "./routes/Movil/cicloACicloCarreraMovil.routes";
+
 
 //WEB CLIENTE
-import listarCarrerasSedesRoutes from "./routes/listarCarrerasSedes.routes";
-import barraCarreraRoutes from "./routes/barraCarrera.routes";
-import carreraUsuarioRoutes from "./routes/carreraUsuario.routes";
-import planEstudioRoutes from "./routes/planEstudio.routes";
-import experienciaCarreraCiclosRoutes from "./routes/experienciaCarreraCiclo.routes";
-import numCiclosCarrreraRoutes from "./routes/numCiclosCarrera.routes";
-import botonExperienciaCarreraSedeRoutes from "./routes/botonExperienciaCarrera.routes";
-import llamarExperienciaCarreraRoutes from "./routes/llamarExperienciaCarrera.routes";
-
-import llamarCarreraWebController from "./routes/llamarCarreraWeb.routes";
-import llamarContenidoExpWebRoutes from "./routes/llamarContenidoExpWeb.routes";
-
+import barraRoutesCliente from "./routes/WebCliente/barra.routes";
+import carreraRoutesCliente from "./routes/WebCliente/carrera.routes";
+import contenidoRoutesCliente from "./routes/WebCliente/contenido.routes";
+import experienciaRoutesCliente from "./routes/WebCliente/experiencia.routes";
+import sedeRoutesCliente from "./routes/WebCliente/sedes.routes";
+import solicitudRoutesCliente from "./routes/WebCliente/solicitud.routes";
+import valoracionRoutesCliente from "./routes/WebCliente/valoracion.routes";
 
 //WEB ADMIN
-import crearUsuarioRoutes from "./routes/crearUsuario.routes";
-import validarUsuariosRoutes from "./routes/validarUsuario.routes";
-import listarCategoriaRoutes from "./routes/listarCategoria.routes";
-import agregarContenidoRoutes from "./routes/agregarContenido.routes";
-import listarCiclosCarrerasRoutes from "./routes/listarCiclosCarrera.routes";
-import agregarExperienciaRoutes from "./routes/agregarExperiencia.routes";
-import editarExperienciaRoutes from "./routes/editarExperiencia.routes";
-import listarExperienciaAdminRoutes from "./routes/listarExperienciasAdmin.routes";
+import crearUsuarioRoutes from "./routes/WebAdmin/crearUsuario.routes";
+import validarUsuariosRoutes from "./routes/WebAdmin/validarUsuario.routes";
+import listarCategoriaRoutes from "./routes/WebAdmin/listarCategoria.routes";
+import agregarContenidoRoutes from "./routes/WebAdmin/agregarContenido.routes";
+import listarCiclosCarrerasRoutes from "./routes/WebAdmin/listarCiclosCarrera.routes";
+import agregarExperienciaRoutes from "./routes/WebAdmin/agregarExperiencia.routes";
+import editarExperienciaRoutes from "./routes/WebAdmin/editarExperiencia.routes";
+import listarExperienciaAdminRoutes from "./routes/WebAdmin/listarExperienciasAdmin.routes";
+import listarUsuariosRoutes from "./routes/WebAdmin/listarUsuarios.routes";
 
 const app = express();
 
@@ -59,20 +58,18 @@ app.use("/api/listarContenidoExperiencias",listarContenidoExperienciaRoutes);
 app.use("/api/llamarBotonExp",llamarBotonExperienciaRoutes); 
 app.use("/api/contenidoExperienciaMovil",contenidoExperienciaMovilRoutes);
 app.use("/api/insertarSolicitudInformacion",insertarSolicitudInformacionRoutes); 
+app.use("/api/listarCarreraSedeMovil",listarCarreraSedeMovilRoutes); 
+app.use("/api/cicloACicloMovil",cicloACicloCarreraMovilRoutes); 
 
 //WEB CLIENTE
-app.use("/api/carreraUsuario",carreraUsuarioRoutes);
-app.use("/api/listarCarreraSede",listarCarrerasSedesRoutes);
-app.use("/api/barraCarrera",barraCarreraRoutes);
-app.use("/api/listarExperiencias",experienciaCarreraCiclosRoutes);
-app.use("/api/listarNumCiclosCarrera",numCiclosCarrreraRoutes);
-app.use("/api/botonExperienciaCarrera",botonExperienciaCarreraSedeRoutes);
-app.use("/api/llamarExperienciaCarrera",llamarExperienciaCarreraRoutes);
-app.use("/api/llamarCarreraWeb",llamarCarreraWebController); 
-app.use("/api/llamarContenidoExpWeb",llamarContenidoExpWebRoutes); 
+app.use('/api/barra', barraRoutesCliente);
+app.use('/api/carrera', carreraRoutesCliente);
+app.use('/api/contenido', contenidoRoutesCliente);
+app.use('/api/experiencia', experienciaRoutesCliente);
+app.use('/api/sede', sedeRoutesCliente);
+app.use('/api/solicitud', solicitudRoutesCliente);
+app.use('/api/valoracion', valoracionRoutesCliente);
 
-//EXPERIENCIA FALTA DEFINIR 
-app.use("/api/planEstduio",planEstudioRoutes);
 
 //WEB ADMIN
 app.use("/api/validarUsuario",validarUsuariosRoutes);
@@ -83,6 +80,6 @@ app.use("/api/listarCiclosCarreras",listarCiclosCarrerasRoutes);
 app.use("/api/agregarExperiencia",agregarExperienciaRoutes); 
 app.use("/api/editarExperiencia",editarExperienciaRoutes); 
 app.use("/api/listarExperienciaAdmin",listarExperienciaAdminRoutes); 
-
+app.use("/api/listarUsuarios",listarUsuariosRoutes); 
 
 export default app;
