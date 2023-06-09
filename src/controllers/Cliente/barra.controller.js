@@ -9,7 +9,8 @@ const getBarraCarrera= async(req,res) =>{
           }
         
         const [result] = await connection.query("CALL get_barra_carrera(?)",[id]);
-        res.send(result);
+        res.status(200).json(result)
+        // res.send(result);
     }catch(error){
         res.status(500).json('Comuniquese con el administrador');
         res.send(error.message);

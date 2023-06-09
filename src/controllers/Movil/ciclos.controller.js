@@ -12,8 +12,7 @@ const getCiclo = async(req,res) =>{
             const response = 
                 {Id : image.id_ciclo,
                 Ruta : image.ruta_ciclo,
-                Tag : image.ciclo_tag,                
-                Imagen : base64,
+                Tag : image.ciclo_tag
                 };
                 images.push(response);
         }

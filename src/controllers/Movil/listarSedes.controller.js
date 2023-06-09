@@ -12,8 +12,7 @@ const getSedes = async(req,res) =>{
             const response =
                 {ID : image.id_sede,
                 NombreSede : image.nombre_sede,
-                Ruta : image.imagen_sede,                
-                Imagen : base64,
+                Ruta : image.imagen_sede
                 };
             images.push(response);
                 

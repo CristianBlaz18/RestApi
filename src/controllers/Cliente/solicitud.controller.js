@@ -13,9 +13,7 @@ const postSolicitud = async(req,res) =>{
             req.body.fecha_nacimiento,
             req.body.modalidad
           ]
-        if (isNaN(id)) {
-            throw new Error('El ID no es un número válido')
-          }
+        
         
         const [result] = await connection.query("CALL post_solicitud(?, ?, ?, ?, ?, ?, ?, ?)",solicitud);
         res.status(200).json({
