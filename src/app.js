@@ -10,7 +10,7 @@ import cors from "cors";
 import listarSedesRoutes from "./routes/Movil/listarSedes.routes";
 import ciclosRoutes from "./routes/Movil/ciclos.routes";    
 import listarCarrerasRoutes from "./routes/Movil/listarCarreras.routes";
-import listarContenidoExperienciaRoutes from "./routes/Movil/listarContenidoExperiencia.routes";
+
 import llamarBotonExperienciaRoutes from "./routes/Movil/llamarBotonExp.routes";
 import contenidoExperienciaMovilRoutes from "./routes/Movil/contenidoExperienciaMovil.routes";
 import insertarSolicitudInformacionRoutes from "./routes/Movil/InsertarSolicitudInformacion.routes";
@@ -55,7 +55,6 @@ app.use(cors());
 app.use("/api/listarCiclos",ciclosRoutes);
 app.use("/api/listarSedes",listarSedesRoutes); 
 app.use("/api/listarCarreras",listarCarrerasRoutes);
-app.use("/api/listarContenidoExperiencias",listarContenidoExperienciaRoutes);
 app.use("/api/llamarBotonExp",llamarBotonExperienciaRoutes); 
 app.use("/api/contenidoExperienciaMovil",contenidoExperienciaMovilRoutes);
 app.use("/api/insertarSolicitudInformacion",insertarSolicitudInformacionRoutes); 
