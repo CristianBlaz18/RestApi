@@ -7,8 +7,7 @@ const getCiclo = async(req,res) =>{
         const images = [];
         for(let i=0; i<result.length; i++){
             const image = result[i];
-            const buffer=Buffer.from(image.blob_ciclo, 'binary');
-            const base64 = buffer.toString('base64');
+            
             const response = 
                 {Id : image.id_ciclo,
                 Ruta : image.ruta_ciclo,

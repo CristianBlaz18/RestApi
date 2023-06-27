@@ -7,8 +7,7 @@ const getSedes = async(req,res) =>{
         for(let i = 0; i < result.length; i++){
             
             const image = result[i];
-            const buffer=Buffer.from(image.blob_sede, 'binary');
-            const base64 = buffer.toString('base64');
+            
             const response =
                 {ID : image.id_sede,
                 NombreSede : image.nombre_sede,

@@ -16,6 +16,8 @@ import contenidoExperienciaMovilRoutes from "./routes/Movil/contenidoExperiencia
 import insertarSolicitudInformacionRoutes from "./routes/Movil/InsertarSolicitudInformacion.routes";
 import listarCarreraSedeMovilRoutes from "./routes/Movil/listarCarreraSedeMovil.routes";
 import cicloACicloCarreraMovilRoutes from "./routes/Movil/cicloACicloCarreraMovil.routes";
+import llamartextoExperienciaMovilRoutes from "./routes/Movil/llamarTextoExperiencia.routes";
+import llamarContenidoExperienciaV2Routes from "./routes/Movil/llamarContendioExperienciaV2.routes";
 
 
 //WEB CLIENTE
@@ -60,6 +62,8 @@ app.use("/api/contenidoExperienciaMovil",contenidoExperienciaMovilRoutes);
 app.use("/api/insertarSolicitudInformacion",insertarSolicitudInformacionRoutes); 
 app.use("/api/listarCarreraSedeMovil",listarCarreraSedeMovilRoutes); 
 app.use("/api/cicloACicloMovil",cicloACicloCarreraMovilRoutes); 
+app.use("/api/textoExperiencia",llamartextoExperienciaMovilRoutes); 
+app.use("/api/contenidoExperienciav2",llamarContenidoExperienciaV2Routes); 
 
 //WEB CLIENTE
 app.use('/api/barra', barraRoutesCliente);
