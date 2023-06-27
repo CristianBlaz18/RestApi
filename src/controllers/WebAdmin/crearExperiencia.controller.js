@@ -2,18 +2,19 @@ import {getConnection} from "../../database/database";
 
 const crearExperiencia = async(req,res) =>{
     try{
-        const{id_carrera,id_sede,titulo,subtitulo,parrafo, fila_experiencia,ciclo_inicio,ciclo_fin,id_categoria,id_contenido}= req.query;
+        const{id_carrera,id_sede,titulo,subtitulo,parrafo, fila_experiencia,ciclo_inicio,ciclo_fin,id_categoria}= req.query;
         const connection = await getConnection();
         connection.query(
-            'CALL agregar_experiencia(?,?, ?,?,?,?,?,?,?,?)',
-            [id_carrera,id_sede,titulo,subtitulo,parrafo, fila_experiencia,ciclo_inicio,ciclo_fin,id_categoria,id_contenido],
-            (error, results, fields) => {
+            'CALL insertar_experiencia_admin(?,?, ?,?,?,?,?,?,?)',
+            [id_carrera,id_sede,titulo,subtitulo,parrafo, fila_experiencia,ciclo_inicio,ciclo_fin,id_categoria],
+            (error, [results], fields) => {
               if (error) {
                 console.error(error);
                 res.status(500).send('Error al agregar experiencia');
               } else {
-                res.status(200).send('Cexperiencia agregado con éxito');
+                res.status(200).send(results);
               }
+              
             }
           );
 
