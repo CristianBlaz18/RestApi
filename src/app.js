@@ -41,6 +41,7 @@ import listarExperienciaAdminRoutes from "./routes/WebAdmin/listarExperienciasAd
 import listarUsuariosRoutes from "./routes/WebAdmin/listarUsuarios.routes";
 import insertarBarraProgresoRoutes from "./routes/WebAdmin/insertarBarraProgreso.routes";
 import listarContendidoAdminRoutes from "./routes/WebAdmin/listarContenidoAdmin.routes";
+import editarBarraProgresoRoutes from "./routes/WebAdmin/editarBarraProgreso.routes";
 
 const app = express();
 
@@ -88,5 +89,6 @@ app.use("/api/listarExperienciaAdmin",listarExperienciaAdminRoutes);
 app.use("/api/listarUsuarios",listarUsuariosRoutes); 
 app.use("/api/insertarBarraProgreso",insertarBarraProgresoRoutes);
 app.use("/api/listarContenidoAdmin",listarContendidoAdminRoutes);
+app.use("/api/editarBarra",editarBarraProgresoRoutes);
 
 export default app;
