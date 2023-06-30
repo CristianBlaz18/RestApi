@@ -10,8 +10,8 @@ const editarExperiencia = async(req,res) =>{
         // }
         const connection = await getConnection();
         connection.query(
-            'CALL update_experiencia(?,?,?,?,?,?,?,?,?,?)',
-            [id_experiencia,titulo,subtitulo,parrafo,ciclo_inicio,ciclo_fin,id_categoria,tipo_contenido,ruta_contenido,tag_contenido],
+            'CALL update_experiencia_v2(?,?,?,?,?,?,?)',
+            [id_experiencia,titulo,subtitulo,parrafo,ciclo_inicio,ciclo_fin,id_categoria],
             (error, results, fields) => {
               if (error) {
                 console.error(error);
